@@ -127,19 +127,20 @@ p {
 }
 
 
-/*主页标题*/
+/*登陆页面*/
 
 #maintitle {
     color: rgb(31, 165, 199);
     position: absolute;
-    top: 27%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
+    top: 35%;
+    left: 30%;
+    width: 40%;
+    height: 20%;
     min-width: 500px;
     min-height: 250px;
     text-align: center;
     text-shadow: 3px 3px rgba(152, 200, 255, 0.4);
+    box-shadow: 5px 8px rgba(105, 105, 105, 0.4);
     font-family: YouYuan, "幼圆";
     transition: 1s ease 0.1s;
     animation: textcolor infinite 8s;
@@ -151,13 +152,30 @@ p {
 }
 
 #maintitle>#smalltitle {
-    font-size: 60px;
+    font-size: 40px;
     line-height: 85px;
 }
 
 #maintitle:hover {
-    text-shadow: 5px 5px rgba(152, 200, 255, 0.8);
+    text-shadow: 4px 5px rgba(152, 200, 255, 0.8);
     transition: 0.7s ease 0.1s;
+}
+
+.mainpageinput {
+    display: block;
+    align-items: center;
+    align-content: center;
+    text-shadow: none;
+}
+
+#usernamediv {
+    position: relative;
+    top: 7%;
+}
+
+#passwddiv {
+    position: relative;
+    top: 27%;
 }
 
 .loopbg {
