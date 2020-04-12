@@ -1,3 +1,4 @@
+//改变活动功能
 function ChangeActive(activename) {
     for (var i = 1; i <= 3; i++) {
         var tag = document.getElementById("navi" + i).innerText;
@@ -10,6 +11,8 @@ function ChangeActive(activename) {
     }
 
     setResult("", ""); //清空结果
+
+    //通过当前选定功能设置元素属性
     switch (activename) {
         case "前方交会":
             {

@@ -61,4 +61,5 @@ footer {
     height: 18px;
     position: fixed;
     bottom: 3px;
+    z-index: 9999;
 }

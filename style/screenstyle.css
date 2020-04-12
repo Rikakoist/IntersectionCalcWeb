@@ -155,6 +155,8 @@ td {
 #btndiv {
     margin: 0 auto;
     width: 65px;
+    position: relative;
+    top: 30%;
 }
 
 
@@ -215,11 +217,6 @@ td {
 #passwddiv {
     position: relative;
     top: 20%;
-}
-
-#btndiv {
-    position: relative;
-    top: 30%;
 }
 
 .loopbg {
@@ -344,44 +341,6 @@ td {
     100% {
         color: rgb(31, 165, 199);
     }
-}
-
-
-/*动画图片*/
-
-.imganime {
-    display: inline;
-    box-shadow: 5px 5px 2px 0 gray;
-    margin: 10px 0;
-    transition: 0.2s ease 0s;
-}
-
-.imganime:hover {
-    box-shadow: 7px 7px 3px 0 gray;
-    transition: 0.5s ease 0s;
-}
-
-
-/*哼、哼，啊啊啊啊啊啊啊啊啊！*/
-
-#koji {
-    /*display: inline-block;*/
-    margin-left: 45px;
-    height: 100px;
-    width: 100px;
-    background-image: url(../pic/koji.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 4px;
-    box-shadow: 3px 3px 1px 0 gray;
-    transition: 0.2s ease 0s;
-}
-
-#koji:hover {
-    background-image: url(../pic/aaaaaaaa.png);
-    background-position: center;
-    box-shadow: 7px 7px 3px 0 gray;
-    transition: 0.3s ease 0s;
 }
 
 

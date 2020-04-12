@@ -6,6 +6,7 @@ input.addEventListener("keyup", function(event) {
     }
 });
 
+//简单的用户名密码比对
 function Authenticate(username, password) {
     if (username == "21232f297a57a5a743894a0e4a801fc3" && password == "e10adc3949ba59abbe56e057f20f883e") {
         window.location = "Calc.html";

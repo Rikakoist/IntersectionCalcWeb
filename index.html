@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./pic/favicon.ico" type="image/x-icon">
     <meta name="generator" content="Notepad++" />
     <link rel="stylesheet" href="./style/screenstyle.css" />
+    <link rel="stylesheet" href="./style/navbarhor_foot.css" />
     <script src="./js/login.js"></script>
     <script src="./js/md5.min.js"></script>
     <title>Login</title>
@@ -20,18 +21,17 @@
 
     <div class="content" id="maintitle">
         <h1 id="smalltitle">您好，请先登录！</h1>
-        <form>
-            <div class="mainpageinput" id="usernamediv">
-                Username <input type="text" name="username" id="username">
-            </div>
-            <div class="mainpageinput" id="passwddiv">
-                Password <input type="password" name="password" id="password">
-            </div>
-            <div class="mainpageinput" id="btndiv">
-                <input class="button" type="button" value="登录" id="submit" onclick="Authenticate(md5(username.value),md5(password.value));">
-            </div>
-        </form>
+        <div class="mainpageinput" id="usernamediv">
+            Username <input type="text" name="username" id="username">
+        </div>
+        <div class="mainpageinput" id="passwddiv">
+            Password <input type="password" name="password" id="password">
+        </div>
+        <div class="mainpageinput" id="btndiv">
+            <input class="button" type="button" value="登录" id="submit" onclick="Authenticate(md5(username.value),md5(password.value));">
+        </div>
     </div>
+    <footer><small>&copy;2020&nbsp;Rikakoist,&nbsp;ALL&nbsp;RIGHTS&nbsp;RESERVED</small></footer>
 </body>
 
 </html>
