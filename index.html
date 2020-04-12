@@ -4,16 +4,20 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta name="author" content="Rikakoist" />
+    <link rel="shortcut icon" href="./pic/favicon.ico" type="image/x-icon">
     <meta name="generator" content="Notepad++" />
     <link rel="stylesheet" href="./style/screenstyle.css" />
+    <script src="./js/login.js"></script>
     <title>Login</title>
 </head>
 
 <body>
+    <!--
     <div class="loopbg" id="bg1"> </div>
     <div class="loopbg" id="bg2"> </div>
     <div class="loopbg" id="bg3"> </div>
-    <div class="loopbg" id="bg4"> </div>
+    <div class="loopbg" id="bg4"> </div>     
+   -->
     <div class="content" id="maintitle">
         <h1 id="smalltitle">您好，请假装登录！</h1>
         <div class="mainpageinput" id="usernamediv">
@@ -21,6 +25,9 @@
         </div>
         <div class="mainpageinput" id="passwddiv">
             Password <input type="password" name="password" id="password">
+        </div>
+        <div class="mainpageinput" id="btndiv">
+            <input type="button" value="登录" id="submit" onclick="Authenticate(username.value,password.value);">
         </div>
     </div>
 </body>

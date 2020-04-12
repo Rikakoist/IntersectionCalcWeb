@@ -2,21 +2,84 @@
 <html>
 
 <head>
+    <!--Fa♂q-->
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta name="author" content="Rikakoist" />
-    <meta name="description" content="个人网站" />
-    <meta name="robots" content="noindex" />
-    <meta name="keywords" content="个人网站, 自我介绍, Self introduction" />
     <meta name="generator" content="Notepad++" />
-    <link rel="icon" href="pic/favicon.png" type="image/png" />
-    <link rel="shortcut icon" href="pic/favicon.png" type="image/png" />
-    <link rel="bookmark" href="pic/favicon.png" type="image/png" />
-    <title>Rikakoist - 个人网站</title>
+    <link rel="shortcut icon" href="./pic/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style/screenstyle.css" />
+    <link rel="stylesheet" href="./style/navbarhor_foot.css" />
+    <script src="./js/drawing.js"></script>
+    <script src="./js/navbarctrl.js"></script>
+    <script src="./js/calc.js"></script>
+    <title>测绘简单计算</title>
 </head>
-<frameset rows="40px,*,18px">
-    <frame id="navi" src="./navbar.html" frameborder="0" scrolling="no" noresize="noresize" />
-    <frame name="view" src="./mainpage.html" frameborder="0" scrolling="auto" noresize="noresize" />
-    <frame id="foot" src="./footerbar.html" frameborder="0" scrolling="no" noresize="noresize" />
-</frameset>
+
+<body id="lizbody" onload="ClearCanvas()">
+
+    <div class="content" id="lizcontent">
+        <ul id="navbar">
+            <li class="active" id="navi1" onclick="ChangeActive('前方交会');">前方交会</li>
+            <li class="navi" id="navi2" onclick="ChangeActive('距离交会');">距离交会</li>
+            <li class="navi" id="navi3" onclick="ChangeActive('两点坐标求距离方位角');">两点坐标求距离方位角</li>
+
+        </ul>
+        <br>
+        <table style="width:96%;margin:0px auto;border: 2px solid rgb(218, 218, 218) ;border-radius: 3px; border-collapse:collapse;">
+            <tbody>
+                <tr>
+                    <td rowspan="2" style="width: 30%; min-width: 260px;">
+                        <form name="intersectionform" action="">
+                            <div class="datadiv" id="p1div">
+                                <h3 class="datatag">Point 1</h3>
+                                <div class="pointvaldiv">
+                                    X: <input type="text" name="p1x" id="p1x"><br/> <br/> Y: <input type="text" name="p1x" id="p1y">
+                                </div>
+                            </div>
+                            <div class="datadiv" id="p2div">
+                                <h3 class="datatag">Point 2</h3>
+                                <div class="pointvaldiv">
+                                    X: <input type="text" name="p2x" id="p2x"><br/> <br/> Y: <input type="text" name="p2x" id="p2y">
+                                </div>
+                            </div>
+                            <div class="datadiv" id="angdiv">
+                                <h3 class="datatag" name="angtag" id="angtag">Angles</h3>
+                                <div class="pointvaldiv">
+                                    <span id="a1tag">α: </span><input type="text" name="anga1" id="anga1"><br/><br/>
+                                    <span id="a2tag">β: </span><input type="text" name="anga2" id="anga2">
+                                </div>
+                            </div>
+
+                            <br>
+                            <div id="btndiv" style="margin: 10px auto;width: 65px;">
+                                <input type="button" style="width: 65px;height:40px;margin: 0 auto;border-radius: 4px solid;" value="计算" id="intercalc" onclick="intersectcalc(document.getElementsByClassName('active')[0].innerText) ">
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <div class="resultdiv" id="resultdiv" style="height:auto;max-height: 160px;">
+                            <h3 class="resulttag">计算结果</h3>
+                            <div class="resultvaldiv">
+                                <span id="result1tag">X: </span><span id="result1val"></span><br/><br/>
+                                <span id="result2tag">Y: </span><span id="result2val"></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div style="margin: 0 auto; width: 455px;">
+                            <!--<h3 class="imagetag">结果绘图</h3>-->
+                            <canvas id="drawRegion" width="450px" height="450px" style="border:1px solid #616161;border-radius: 2px; margin: 0 auto;">
+                        </canvas>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer><small>&copy;2020&nbsp;Rikakoist,&nbsp;ALL&nbsp;RIGHTS&nbsp;RESERVED</small></footer>
+</body>
 
 </html>
