@@ -7,11 +7,9 @@ input.addEventListener("keyup", function(event) {
 });
 
 function Authenticate(username, password) {
-    console.log((escape(username)) + escape(password));
-    if (username == "admin" && password == "123456") {
+    if (username == "21232f297a57a5a743894a0e4a801fc3" && password == "e10adc3949ba59abbe56e057f20f883e") {
         window.location = "Calc.html";
     } else {
         alert("错误的用户名或密码！");
     }
-
 }

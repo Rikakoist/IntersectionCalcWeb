@@ -113,7 +113,7 @@ function intersectcalc(calcType) {
                 if (isNaN(ResultP.x) || isNaN(ResultP.y)) {
                     setResult("NaN", "NaN");
                 } else {
-                    setResult(ResultP.x, ResultP.y);
+                    setResult(Math.round(ResultP.x * 10000) / 10000, Math.round(ResultP.y * 10000) / 10000);
                     var Points = new Array(p1, p2, ResultP);
                     IntersectionPoints("IntersectionAhead", Points);
                 }
@@ -125,7 +125,7 @@ function intersectcalc(calcType) {
                 if (isNaN(ResultP.x) || isNaN(ResultP.y)) {
                     setResult("NaN", "NaN");
                 } else {
-                    setResult(ResultP.x, ResultP.y);
+                    setResult(Math.round(ResultP.x * 10000) / 10000, Math.round(ResultP.y * 10000) / 10000);
                     var Points = new Array(p1, p2, ResultP);
                     IntersectionPoints("DistanceIntersection", Points);
                 }
@@ -138,7 +138,7 @@ function intersectcalc(calcType) {
                 if (isNaN(ResultDis) || isNaN(ResultAzi)) {
                     setResult("NaN", "NaN");
                 } else {
-                    setResult(ResultAzi, ResultDis);
+                    setResult(Math.round(ResultAzi * 10000) / 10000, Math.round(ResultDis * 10000) / 10000);
                     //var Points = new Array(p1, p2);
                 }
                 break;
@@ -150,4 +150,18 @@ function intersectcalc(calcType) {
 function setResult(res1, res2) {
     document.getElementById("result1val").innerText = res1;
     document.getElementById("result2val").innerText = res2;
+}
+
+//取整数
+function normalize(num) {
+    if (isNaN(num)) {
+        return null;
+    }
+    if (Math.abs(num - Math.floor(num)) <= 1e-7) {
+        return Math.floor(num);
+    }
+    if (Math.abs(num - Math.ceil(num)) <= 1e-7) {
+        return Math.ceil(num);
+    }
+    return num;
 }
