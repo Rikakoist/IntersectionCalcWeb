@@ -1,3 +1,8 @@
+//度分秒转十进制
+function DMS2DEC(DMS) {
+    return (parseInt(DMS) + (parseFloat((DMS - parseInt(DMS)) * 100) / 60.0) + ((100 * DMS - parseInt(100 * DMS)) * 100 / 3600));
+}
+
 //距离计算
 function Distance(p1, p2) {
     return Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2));
@@ -11,52 +16,32 @@ function CoordAngle(p1, p2) {
     var arctg = 0;
     dx = p2.x - p1.x;
     dy = p2.y - p1.y;
-
-    if (Math.abs(dx) <= 1e-7) //x增量为零
+    arctg = Math.atan((p2.y - p1.y) / (p2.x - p1.x)) / Math.PI * 180;
+    /*if (Math.abs(dx) <= 1e-7) //x增量为零
     {
         if (Math.abs(dy) <= 1e-7) //y增量为零，意即两点坐标数据完全相同，报错
         {
-            throw new Exception("dx = dy = 0!");
+            return NaN;
         } else //y增量不为零，方位角位于坐标轴上
         {
-            if (dy < 0) {
-                CoordAngle = 270.000;
-            } else {
-                CoordAngle = 90.000;
-            }
+            CoordAngle = (dy < 0) ? 270 : 90;
         }
     } else //x增量不为零
     {
         if (dy == 0) //y增量为零，方位角位于坐标轴上
         {
-            if (dx < 0) {
-                CoordAngle = 180.000;
-            } else {
-                CoordAngle = 0.000;
-            }
+            CoordAngle = (dx < 0) ? 180 : 0;
         } else //y增量不为零，依据x、y增量符号判断方位角所处象限
         {
             arctg = Math.atan((p2.y - p1.y) / (p2.x - p1.x)) / Math.PI * 180; //计算连线的数学角度
             if (dy > 0) {
-                if (dx > 0) //第一象限
-                {
-                    CoordAngle = arctg;
-                } else //第二象限
-                {
-                    CoordAngle = 180.000 + arctg;
-                }
+                CoordAngle = (dx > 0) ? arctg : 180 + arctg;
             } else {
-                if (dx > 0) //第三象限
-                {
-                    CoordAngle = 360.000 + arctg;
-                } else //第四象限
-                {
-                    CoordAngle = arctg + 180.000;
-                }
+                CoordAngle = (dx > 0) ? 360 + arctg : arctg + 180;
             }
         }
-    }
-    return CoordAngle;
+    }*/
+    return (Math.abs(dx) <= 1e-7) ? ((Math.abs(dy) <= 1e-7) ? NaN : ((dy < 0) ? 270 : 90)) : ((Math.abs(dy) <= 1e-7) ? ((dx < 0) ? 180 : 0) : ((dy > 0) ? ((dx > 0) ? arctg : 180 + arctg) : ((dx > 0) ? 360 + arctg : arctg + 180)));
 }
 
 //距离交会
@@ -135,12 +120,9 @@ function intersectcalc(calcType) {
             {
                 var ResultDis = parseFloat(Distance(p1, p2));
                 var ResultAzi = parseFloat(CoordAngle(p1, p2));
-                if (isNaN(ResultDis) || isNaN(ResultAzi)) {
-                    setResult("NaN", "NaN");
-                } else {
-                    setResult(Math.round(ResultAzi * 10000) / 10000, Math.round(ResultDis * 10000) / 10000);
-                    //var Points = new Array(p1, p2);
-                }
+
+                setResult(Math.round(ResultAzi * 10000) / 10000, Math.round(ResultDis * 10000) / 10000);
+
                 break;
             }
     }

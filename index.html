@@ -20,15 +20,17 @@
 
     <div class="content" id="maintitle">
         <h1 id="smalltitle">您好，请先登录！</h1>
-        <div class="mainpageinput" id="usernamediv">
-            Username <input type="text" name="username" id="username">
-        </div>
-        <div class="mainpageinput" id="passwddiv">
-            Password <input type="password" name="password" id="password">
-        </div>
-        <div class="mainpageinput" id="btndiv">
-            <input type="button" value="登录" id="submit" onclick="Authenticate(md5(username.value),md5(password.value));">
-        </div>
+        <form>
+            <div class="mainpageinput" id="usernamediv">
+                Username <input type="text" name="username" id="username">
+            </div>
+            <div class="mainpageinput" id="passwddiv">
+                Password <input type="password" name="password" id="password">
+            </div>
+            <div class="mainpageinput" id="btndiv">
+                <input class="button" type="button" value="登录" id="submit" onclick="Authenticate(md5(username.value),md5(password.value));">
+            </div>
+        </form>
     </div>
 </body>
 
